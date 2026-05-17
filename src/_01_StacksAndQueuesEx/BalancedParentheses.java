@@ -7,7 +7,11 @@ public class BalancedParentheses {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String[] input = scan.nextLine().split("");
-
+/*
+* Some comments for the example
+*
+*
+ */
         ArrayDeque<String> symbols = new ArrayDeque<>();
 
         if (input.length <= 1){
