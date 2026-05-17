@@ -10,7 +10,11 @@ public class BasicStackOperations {
         int n = scan.nextInt();
         int s = scan.nextInt();
         int x = scan.nextInt();
-
+/*
+* Second documentations for the test
+*
+*
+ */
 
         ArrayDeque<Integer> numbers = new ArrayDeque<>();
 
