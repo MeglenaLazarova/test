@@ -31,6 +31,38 @@ public class HandsOfCards {
             input = scan.nextLine().split(": ");
         }
 
-        for (Map.Entry<>)
+
+        for (Map.Entry<String, Set<String>> c : cards.entrySet()){
+            Set<String> c2 = c.getValue();
+            String name = c.getKey();
+
+            int sum = 0;
+
+            for (String c3 : c2){
+                String rank = c3.substring(0, c3.length() - 1); // 2, 3, 10, J, Q, K, A
+                char suit = c3.charAt(c3.length() - 1);         // S, H, D, C
+
+                int power;
+                switch (rank) {
+                    case "J" -> power = 11;
+                    case "Q" -> power = 12;
+                    case "K" -> power = 13;
+                    case "A" -> power = 14;
+                    default -> power = Integer.parseInt(rank);
+                }
+
+                int type = switch (suit) {
+                    case 'S' -> 4;
+                    case 'H' -> 3;
+                    case 'D' -> 2;
+                    case 'C' -> 1;
+                    default -> 0;
+                };
+
+                sum += power * type;
+            }
+
+            System.out.println(name + ": " + sum);
+        }
      }
 }
